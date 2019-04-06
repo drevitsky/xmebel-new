@@ -32,7 +32,7 @@ var conf = {
 		img		: 'img/'
 	},
 	watch 	: {
-		html 	: '*.html',
+		html 	: '**/*.html',
 		styles	: 'scss/**/*.scss',
 		js		: 'js/**/*.js',
 		fonts	: 'fonts/*',
