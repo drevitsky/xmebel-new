@@ -283,6 +283,10 @@ body {
 	   
 		}
 }
+.btn-detail {
+	margin-right: 0;
+}
+
 // lazy-load
 
  .lazy-load  {
@@ -1077,7 +1081,7 @@ iframe {
 
 	&__imagebox {
 		//width: 20rem;
-		overflow:hidden ;
+		// overflow:hidden ;
 	}
 	&__title {
 		font-size: 4rem;
