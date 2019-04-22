@@ -31,9 +31,11 @@ $(document).ready(function(){
 $("a.inline").fancybox({
     'hideOnContentClick': true
   });
+// initial galery fancybox
+$("a.grouped_elements").fancybox();
 	//  lazy-load 
 	// $('.lazy-load').addClass('not-load');
-	 var test = $('.lazy-load.not-load').slice(0, 6).removeClass('not-load');
+	 var test = $('.lazy-load.not-load').slice(0, 9).removeClass('not-load');
 	 isotope.isotope();
 	
 	 $('#btn-load').on('click',function(e){
@@ -57,6 +59,27 @@ $("a.inline").fancybox({
   	});
 	 
 })
+
+//E-mail Ajax Send
+  $("#modal-form-1").submit(function() { //Change
+    var th = $(this);
+    $.ajax({
+      type: "POST",
+      url: "mail.php", //Change
+      data: th.serialize()
+    }).done(function() {
+      alert("Спасибо, мы вам перезвоним!");
+      setTimeout(function() {
+        // Done Functions
+        th.trigger("reset");
+        $("#Modal-2").modal('toggle');
+        
+      }, 500);
+    });
+    return false;
+  });
+
+
 // map
 	 var map, marker, infoWindow,
 			center = {

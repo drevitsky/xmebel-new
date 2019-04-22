@@ -38,20 +38,26 @@ body {
 	height: 4.4rem;
 	width: 4.4rem;
 	border: 1px solid #fff;
-	background-color: transparent;
+	background-color: #00000080;
 	
 	transition: all 0.5s ease;
 	&:hover {
-		background-color: #000;
-		border: 1px solid #000;
+		background-color: #ffffff80;
+		border: 1px solid #00000080;
 	}
 }
 .icon-prev {
 	transform: rotate(180deg);
 }
 #arrow-next {
-	stroke: 2px;
+	stroke-width: 4px;
+	stroke: #000;
 }
+#arrow-prev {
+	stroke-width: 4px;
+	stroke: #000;
+}
+
 .carousel-caption {
 	left: 50%;
 	transform: translate(-50%, 0);
@@ -195,6 +201,10 @@ body {
 	p {
 		transform:translate3d(0, 200%, 0);
 	}
+	.hit {
+		position: absolute;
+		transform:translate3d(0, -400%, 0);
+	}
 }
 .image-box {
 			display: inline-block;
@@ -212,6 +222,10 @@ body {
 		p {
 			opacity: 1;
 			transform:translate3d(0, 0, 0);
+		}
+		.hit {
+			opacity: 1;
+			transform:translate3d(80%,-150%, 0);
 		}
 	}
 }
@@ -306,13 +320,22 @@ body {
 
 .header_info {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-between ;
 	border-bottom: 1px solid $bg-gray;
+	flex-wrap: wrap;
+
 	a{
 		text-decoration: none;
 		color: $text-color;
 	}
 }
+// edit 20042019 add baner-top
+.baner-top {
+	width: 250px;
+	height: 38px;
+	// background-color: #4fc;
+}
+
 .nav-item {
 
 	margin: 2.2rem;
@@ -1121,7 +1144,7 @@ iframe {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-color: rgba(#fff, 0.4);
+			background-color: rgba(#fff, 0.6);
 			align-items:flex-end;
 			@media screen and (max-width: 576px) {
 	 			flex-direction: column;
@@ -1180,8 +1203,8 @@ iframe {
 		} 
 	}
 	&-body {
-		padding-top: 5rem;
-		padding-bottom: 5rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 	&-footer {
 		display: flex;
@@ -1202,6 +1225,10 @@ iframe {
 			background-color: $bg-gray;
 			text-decoration: none;
 			color: $red-color;
+		}
+		&-form {
+			background-color: $red-color;
+			color: #fff;
 		} 
 	}
 	&-tel {
@@ -1210,9 +1237,43 @@ iframe {
 	 	font-size: 2rem;	   
 		}
 	}
+
 }
+// edit 19.04.2019 add modal-form
+.modal-form {
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+		input,.form__text {
+			margin: 1rem 0;
+			font-size: 1.6rem;
+			color: red;
+			border:1px solid $red-color;
+			padding: 1rem;
+			border-radius:2px;
+
+
+		}
+		input:hover {
+			background-color: #9994;
+		}
+
+
+
+		input:focus {
+			outline: none; 
+			border-radius:2px; 
+						
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+		
+		
+
+}
+
+
 #carousel-example-generic {
-	display: none;
+	// display: none;
 }
 
 .img-sample {
@@ -1225,5 +1286,12 @@ iframe {
 a {
 	&:hover {
 		color: #ebebeb;
+	}
+}
+
+.text-red {
+	color: $red-color;
+	a:hover {
+		color: #000;
 	}
 }
